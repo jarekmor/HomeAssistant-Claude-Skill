@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmd=$(jq -r \".tool_input.command // empty\"); if echo \"$cmd\" | grep -qiE \"(-x[[:space:]]*.?delete|--request[= ]*.?delete|\\.delete\\(|https?[[:space:]]+delete\\b|--method[= ]*delete)\"; then printf \"%s\" \"{\\\"hookSpecificOutput\\\":{\\\"hookEventName\\\":\\\"PreToolUse\\\",\\\"permissionDecision\\\":\\\"deny\\\",\\\"permissionDecisionReason\\\":\\\"Blocked: command appears to issue an HTTP DELETE request. DELETE calls (e.g. Home Assistant /api/states/<entity_id>) are blocked by project policy to prevent accidental entity deletion.\\\"}}\"; fi",
+            "statusMessage": "Checking for HTTP DELETE requests..."
+          }
+        ]
+      }
+    ]
+  }
+}
