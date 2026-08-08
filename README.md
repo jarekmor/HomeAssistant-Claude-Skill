@@ -27,8 +27,6 @@ stanu Home Assistanta.
 scripts/
   ghost_report.py                      # audyt osieroconych encji recordera
   test_ghost_report.py                 # testy jednostkowe (pytest)
-docs/
-  plan-generalizacja.md                # projekt uogólnienia ghost_report.py
 reports/                               # wygenerowane raporty (w .gitignore)
 .env_example                           # szablon zmiennych środowiskowych
 .gitignore

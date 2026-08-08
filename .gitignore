@@ -4,3 +4,4 @@ __pycache__/
 .env
 reports/
 docs/*.local.md
+docs/plan-generalizacja.md
